@@ -1,16 +1,13 @@
 PODS:
-  - DZNEmptyDataSet (1.8.1)
   - KKPopTooltip (0.0.2)
-  - pop (1.0.10)
+  - pop (1.0.12)
 
 DEPENDENCIES:
-  - DZNEmptyDataSet
   - KKPopTooltip (from `KKPopTooltip.podspec`)
   - pop (~> 1.0)
 
 SPEC REPOS:
   trunk:
-    - DZNEmptyDataSet
     - pop
 
 EXTERNAL SOURCES:
@@ -18,10 +15,9 @@ EXTERNAL SOURCES:
     :path: KKPopTooltip.podspec
 
 SPEC CHECKSUMS:
-  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   KKPopTooltip: f848c7ead91ff4d09958e4d08298930fa629e7a0
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
 
-PODFILE CHECKSUM: 09f949dace403a7de6ac4cd4ab598b54ea723a87
+PODFILE CHECKSUM: a0604eb77886e38818c06d7fd2e20e47e0d25539
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.2

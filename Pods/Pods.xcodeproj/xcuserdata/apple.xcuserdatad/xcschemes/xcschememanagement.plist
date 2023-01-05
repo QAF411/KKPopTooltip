@@ -4,36 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DZNEmptyDataSet.xcscheme_^#shared#^_</key>
+		<key>KKPopTooltip.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>KKPopTooltip.xcscheme_^#shared#^_</key>
+		<key>Pods-KKPopTooltip.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-KKPopTooltip.xcscheme_^#shared#^_</key>
+		<key>Pods-KKPopTooltipTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-KKPopTooltipTests.xcscheme_^#shared#^_</key>
+		<key>Pods-KKPopTooltipUITests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>Pods-KKPopTooltipUITests.xcscheme_^#shared#^_</key>
+		<key>pop.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>pop.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>
