@@ -42,9 +42,9 @@ typedef void((^DrawCompletion)(void));
 
 - (void)configurationViews {
     self.backgroundColor = [UIColor clearColor];
-    self.layer.shadowColor = [UIColor colorWithWhite:0.8 alpha:1].CGColor;
-    self.layer.shadowOpacity = 1;
-    self.layer.shadowRadius = 8;
+//    self.layer.shadowColor = [UIColor colorWithWhite:0 alpha:1].CGColor;
+//    self.layer.shadowOpacity = 1;
+//    self.layer.shadowRadius = 8;
     self.userInteractionEnabled = YES;
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeView)]];
             
@@ -61,8 +61,10 @@ typedef void((^DrawCompletion)(void));
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
-    CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 0);
+//    CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
+//    CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 0);
+    CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
+    CGContextSetRGBStrokeColor(ctx, 1, 1, 1, 1);
     CGFloat arrowX = [self calArrowX];
     switch (self.arrowPosition) {
         case TooltipArrowPositionTop:
@@ -209,10 +211,11 @@ typedef void((^DrawCompletion)(void));
 
 #pragma mark - Class Method
 
-+ (KKPopTooltip *)showAtBarButtonItem:(UIBarButtonItem *)barButtonItem message:(NSString *)message arrowPosition:(TooltipArrowPosition)position {
++ (KKPopTooltip *)showAtBarButtonItem:(UIBarButtonItem *)barButtonItem message:(NSMutableAttributedString *)message arrowPosition:(TooltipArrowPosition)position {
     if (![barButtonItem isKindOfClass:[UIBarButtonItem class]]) {return nil; }
     UIView *targetView = (UIView *)[barButtonItem performSelector:@selector(view)];
     UIView *containerView = [UIApplication sharedApplication].keyWindow;
+    
     return [self showPointingAtView:targetView inView:containerView message:message arrowPosition:position];
 }
 
@@ -223,7 +226,7 @@ typedef void((^DrawCompletion)(void));
     return [self showPointingAtView:targetView inView:containerView contentView:contentView arrowPosition:position];
 }
 
-+ (KKPopTooltip *)showPointingAtView:(UIView *)targetView inView:(UIView *)containerView message:(NSString *)message arrowPosition:(TooltipArrowPosition)position {
++ (KKPopTooltip *)showPointingAtView:(UIView *)targetView inView:(UIView *)containerView message:(NSMutableAttributedString *)message arrowPosition:(TooltipArrowPosition)position {
     CGRect rect = [containerView convertRect:targetView.frame fromView:targetView.superview];
     CGPoint point = CGPointZero;
     if (position == TooltipArrowPositionTop) {
@@ -245,20 +248,20 @@ typedef void((^DrawCompletion)(void));
     return [self showPointing:point inView:containerView contentView:contentView border:0 arrowPosition:position];
 }
 
-+ (KKPopTooltip *)showPointing:(CGPoint)point inView:(UIView *)containerView message:(NSString *)message arrowPosition:(TooltipArrowPosition)position {
-    CGSize textSize = [message boundingRectWithSize:CGSizeMake(KK_SCREEN_WIDTH - 30 ,MAXFLOAT)
++ (KKPopTooltip *)showPointing:(CGPoint)point inView:(UIView *)containerView message:(NSMutableAttributedString *)message arrowPosition:(TooltipArrowPosition)position {
+    CGSize textSize = [message.string boundingRectWithSize:CGSizeMake(KK_SCREEN_WIDTH - 30 ,MAXFLOAT)
                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                         attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16]}
+                                         attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14]}
                                             context:nil].size;
     UILabel *textLabel = [[UILabel alloc] init];
     CGRect frame = {0, 0, textSize.width, textSize.height};
     textLabel.frame = frame;
-    textLabel.textColor = [UIColor colorWithWhite:0.2 alpha:1];
-    textLabel.font = [UIFont boldSystemFontOfSize:16];
+    textLabel.textColor = [UIColor whiteColor];
+    textLabel.font = [UIFont systemFontOfSize:14];
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.backgroundColor = [UIColor clearColor];
     textLabel.numberOfLines = 0;
-    textLabel.text = message;
+    textLabel.attributedText = message;
     return [self showPointing:point inView:containerView contentView:textLabel arrowPosition:position];
 }
 
@@ -287,10 +290,10 @@ typedef void((^DrawCompletion)(void));
     }
     if (position == TooltipArrowPositionTop) {
         contentRect.origin.y = border + margin + attached;
-        rect = CGRectMake(x, point.y, tooltipSize.width, tooltipSize.height);
+        rect = CGRectMake(x, point.y, tooltipSize.width - 10, tooltipSize.height);
     } else if (position == TooltipArrowPositionBottom) {
         contentRect.origin.y = border + margin;
-        rect = CGRectMake(x, point.y - tooltipSize.height, tooltipSize.width, tooltipSize.height);
+        rect = CGRectMake(x, point.y - tooltipSize.height, tooltipSize.width , tooltipSize.height);
     }
     contentView.frame = contentRect;
     KKPopTooltip *tooltip = [[KKPopTooltip alloc]initWithFrame:rect position:position];
@@ -303,3 +306,4 @@ typedef void((^DrawCompletion)(void));
 }
 
 @end
+
