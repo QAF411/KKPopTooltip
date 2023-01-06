@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
     spec.license          = { :type => 'MIT', :file => 'LICENSE' }
     spec.author             = { "liujixin" => "liujixin054@tops001.com" }
     spec.source       = { :git => "https://github.com/liuxiaoxinxin/KKPopTooltip.git", :tag => "#{spec.version}" }
-    spec.ios.deployment_target = '10.0'
+    spec.ios.deployment_target = '9.0'
     
     spec.source_files  = "Source/**"
     spec.resources = "Source/Assets/*"
