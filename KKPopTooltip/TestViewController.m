@@ -7,10 +7,10 @@
 //
 
 #import "TestViewController.h"
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+//#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "KKPopTooltip.h"
 
-@interface TestViewController ()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface TestViewController ()//<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *footerButtom;
@@ -25,8 +25,8 @@
     // ekekke
     self.title = @"KKTooltip";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.emptyDataSetSource = self;
-    self.tableView.emptyDataSetDelegate = self;
+//    self.tableView.emptyDataSetSource = self;
+//    self.tableView.emptyDataSetDelegate = self;
 
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     

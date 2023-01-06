@@ -8,7 +8,7 @@
 //
 
 #import "KKPopTooltip.h"
-#import <pop/POP.h>
+#import "<pop/POP.h>"
 
 #define KK_SCREEN_WIDTH ([[UIScreen mainScreen]bounds].size.width)
 #define KK_SCREEN_HEIGHT ([[UIScreen mainScreen]bounds].size.height)

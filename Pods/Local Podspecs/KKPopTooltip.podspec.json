@@ -16,8 +16,15 @@
     "tag": "0.0.2"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "source_files": "Source/**",
-  "resources": "Source/Assets/*"
+  "resources": "Source/Assets/*",
+  "requires_arc": true,
+  "static_framework": true,
+  "dependencies": {
+    "pop": [
+
+    ]
+  }
 }

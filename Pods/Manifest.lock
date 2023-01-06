@@ -1,10 +1,10 @@
 PODS:
-  - KKPopTooltip (0.0.2)
+  - KKPopTooltip (0.0.2):
+    - pop
   - pop (1.0.12)
 
 DEPENDENCIES:
   - KKPopTooltip (from `KKPopTooltip.podspec`)
-  - pop (~> 1.0)
 
 SPEC REPOS:
   trunk:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: KKPopTooltip.podspec
 
 SPEC CHECKSUMS:
-  KKPopTooltip: f848c7ead91ff4d09958e4d08298930fa629e7a0
+  KKPopTooltip: 7455a7afe3e0788426d6facee81f8d5ca13ed540
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
 
-PODFILE CHECKSUM: a0604eb77886e38818c06d7fd2e20e47e0d25539
+PODFILE CHECKSUM: 7682d5c4ba5435f095bee71c93081470195f1bc5
 
 COCOAPODS: 1.10.2

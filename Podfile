@@ -5,9 +5,9 @@ target 'KKPopTooltip' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-    pod 'pop', '~> 1.0'
+#    pod 'pop', '~> 1.0'
 #    pod 'DZNEmptyDataSet'
-#    pod 'KKPopTooltip', :path => 'KKPopTooltip.podspec'
+    pod 'KKPopTooltip', :path => 'KKPopTooltip.podspec'
 
   # Pods for KKPopTooltip
 
