@@ -8,6 +8,7 @@
 //
 
 #import "KKPopTooltip.h"
+#import "pop/POP.h"
 
 #define KK_SCREEN_WIDTH ([[UIScreen mainScreen]bounds].size.width)
 #define KK_SCREEN_HEIGHT ([[UIScreen mainScreen]bounds].size.height)
@@ -64,7 +65,7 @@ typedef void((^DrawCompletion)(void));
 //    CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
 //    CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 0);
     CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
-    CGContextSetRGBStrokeColor(ctx, 1, 3, 3, 3);
+    CGContextSetRGBStrokeColor(ctx, 1, 1, 1, 1);
     CGFloat arrowX = [self calArrowX];
     switch (self.arrowPosition) {
         case TooltipArrowPositionTop:
@@ -306,3 +307,4 @@ typedef void((^DrawCompletion)(void));
 }
 
 @end
+
